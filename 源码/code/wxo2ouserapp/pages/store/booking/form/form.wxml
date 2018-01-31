@@ -1,0 +1,115 @@
+<view class="table-list">
+	<view class="row border-item-1 pad-10" style="padding-top:26rpx;"  >
+		<view style="width:30%" class="push-r-10">
+			<text class="font-s16" style="line-height:48rpx;">服务项目</text>
+		</view>
+	</view>
+	<view class="row border-item-1 pad-10" style="padding-top:26rpx;"  >
+		<view style="width:100%" class="push-r-10">
+			<text class="font-s16" style="line-height:48rpx;">当前选择:{{res.name}}</text>
+		</view>
+	</view>
+	<view class="row border-item-1 pad-10" style="padding-top:26rpx;"  >
+		<view style="width:30%" class="push-r-10">
+			<text class="font-s16" style="line-height:48rpx;">到店日期</text>
+		</view>
+	</view>
+	<view class="row border-item-1 pad-10" style="padding-top:26rpx;"  >
+		<view style="width:80%" class="push-r-10">
+			<text class="font-s16" style="line-height:48rpx;">{{data.when}}</text>
+		</view>
+	</view>
+	<view class="row border-item-1 pad-10" style="padding-top:26rpx;"  >
+		<view style="width:30%" class="push-r-10">
+			<text class="font-s16" style="line-height:48rpx;">留言</text>
+		</view>
+	</view>
+	<view class="row border-item-1 pad-10" style="padding-top:26rpx;"  >
+		<view style="width:100%" class="push-r-10">
+			<text class="font-s16" style="line-height:40rpx;">{{data.remark}}</text>
+		</view>
+	</view>
+	<!-- 等待店员确认 -->
+	<view wx:if="{{data.status=='WAIT_CFM'}}">
+		<view class="row border-item-1 pad-10" style="padding-top:26rpx;"  >
+			<view style="width:60%" class="push-r-10">
+				<text class="font-s16" style="line-height:48rpx;">等待店员确认</text>
+			</view>
+		</view>
+	</view>
+	<!-- 等待店员确认结束 -->
+	<!-- 预约成功 -->
+	<view wx:if="{{data.status=='SUCCESS'}}">
+		<view class="row border-item-1 pad-10" style="padding-top:26rpx;"  >
+			<view style="width:60%" class="push-r-10">
+				<text class="font-s16" style="line-height:48rpx;">等待店员确认</text>
+			</view>
+		</view>
+	</view>
+	<!-- 预约成功 -->
+	<!-- FAIL -->
+	<view wx:if="{{data.status=='FAIL'}}">
+		<view class="row border-item-1 pad-10" style="padding-top:26rpx;"  >
+			<view style="width:60%" class="push-r-10">
+				<text class="font-s16" style="line-height:48rpx;color:red">预约失败 （ 非常抱歉，房间已满 ）</text>
+			</view>
+		</view>
+	</view>
+	<!-- FAIL -->
+
+	<!-- wait_cfm -->
+	<template name="WAIT_CFM">
+		<view style="width:40%">
+			<button 
+				class="push-t-10 push-l-10"
+				type="default" size="mini" loading="{{locked}}" 
+		   	 	bindtap="black">返回首页</button>
+		</view>
+		<view class="text-right" style="width:60%">
+			<button 
+				class="push-t-10 push-r-10"
+				type="warn" size="mini" loading="{{locked}}" 
+		   	 	bindtap="cancel">取消预约</button>
+		</view>
+	</template>
+	<!-- wait_cfm -->
+
+	<!-- SUCCESS -->
+	<template name="SUCCESS">
+		<view style="width:40%">
+			<button 
+				class="push-t-10 push-l-10"
+				type="default" size="mini" loading="{{locked}}" 
+		   	 	bindtap="black">返回首页</button>
+		</view>
+		<view class="text-right" style="width:60%">
+			<button 
+				class="push-t-10 push-r-10"
+				type="warn" size="mini" loading="{{locked}}" 
+		   	 	bindtap="cancel">取消预约</button>
+		</view>
+	</template>
+	<!-- SUCCESSEND -->
+	
+	<!-- FAIL -->
+	<template name="FAIL">
+		<view style="width:40%">
+			<button 
+				class="push-t-10 push-l-10"
+				type="default" size="mini" loading="{{locked}}" 
+		   	 	bindtap="black">返回首页</button>
+		</view>
+		<view class="text-right" style="width:60%">
+			<button 
+				class="push-t-10 push-r-10"
+				type="warn" size="mini" loading="{{locked}}" 
+		   	 	bindtap="begin">重新预约</button>
+		</view>
+	</template>
+	<!-- FAIL -->
+	<view class="bottombar bg-grey view-row">
+	<!-- <template is="FAIL"/> -->
+	 <template is="{{data.status}}"/>
+	</view>
+	<view class="phrow"></view>
+</view>

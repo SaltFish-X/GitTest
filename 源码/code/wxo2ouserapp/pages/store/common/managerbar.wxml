@@ -1,0 +1,25 @@
+<view class="topbar view-row">
+	<view style="width:88rpx;color:#ffffff;">
+		<image class="avatar"  mode="widthFix" src="{{common.manager.avatarUrl}}"></image>
+	</view>
+	<view  style="width:40%">
+		<text>店员: {{common.manager.name}}</text>
+	</view>
+	<view class="pull-right text-right push-r-10" style="width:60%">
+		<image style="width:48rpx;" 
+			data-link="/manager/order/user/user"
+			bindtap="onMangerbarTap" 
+			mode="widthFix" src="/res/manager/tabs/userc.png"> </image>
+
+
+		<image style="width:48rpx;" 
+			data-link="/manager/order/list/list"
+			bindtap="onMangerbarTap" 
+			mode="widthFix" src="/res/manager/tabs/orderc.png"></image>
+
+		<image style="width:48rpx;" 
+			data-link="/manager/booking/list/list"
+			bindtap="onMangerbarTap" 
+			mode="widthFix" src="/res/manager/tabs/bookingc.png"></image>
+	</view>
+</view>

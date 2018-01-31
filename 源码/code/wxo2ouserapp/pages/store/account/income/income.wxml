@@ -1,0 +1,11 @@
+<view class="block">
+	<form bindsubmit="income">
+	<view class="form-group">
+		<input type="digit" placeholder="请输入充值金额" name="amount"/>
+		<view class="form-group">
+			<button type="primary" size="{{size}}"  formType="submit" class="left-but">确认</button>
+			<button type="warn" size="{{size}}"  bindtap="unpayout"  class="right-but">取消</button>
+		</view>
+	</view>
+	</form>
+</view>

@@ -1,0 +1,8 @@
+@import "../../wxss/style.wxss"
+
+.right-but{
+	float: right;
+	position: relative;
+	left: -15%;
+
+}

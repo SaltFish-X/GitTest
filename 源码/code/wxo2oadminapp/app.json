@@ -1,0 +1,65 @@
+{
+  "pages":[
+        "manager/order/user/user",
+        "manager/order/confirm/confirm",
+        "manager/order/detail/detail",
+        "manager/order/products/products",
+        "manager/order/list/list",
+        "manager/booking/list/list",
+        "manager/booking/detail/detail",
+        "manager/report/list/list",
+        "manager/options/menu/menu",
+        "manager/options/member/list",
+        "manager/options/member/detail",
+        "manager/options/goods/list",
+        "manager/options/goods/detail",
+        "manager/options/store/list",
+        "manager/options/store/detail",
+        "admin/table/index",
+        "admin/test/test"
+    ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar":{
+    "borderStyle":"white",
+    "backgroundColor":"#ffffff",
+    "selectedColor":"#81c7d1",
+    "color":"#a6a6a6",
+    "list": [
+        {
+            "pagePath": "manager/order/user/user",
+            "iconPath": "res/manager/tabs/user.png",
+            "selectedIconPath":"res/manager/tabs/userc.png",
+            "text":"下单"
+        }, {
+            "pagePath": "manager/order/list/list",
+            "iconPath": "res/manager/tabs/order.png",
+            "selectedIconPath":"res/manager/tabs/orderc.png",
+            "text":"订单"
+        }, {
+            "pagePath": "manager/booking/list/list",
+            "iconPath": "res/manager/tabs/booking.png",
+            "selectedIconPath":"res/manager/tabs/bookingc.png",
+            "text":"预约"
+        }, {
+            "pagePath": "manager/report/list/list",
+            "iconPath": "res/manager/tabs/report.png",
+            "selectedIconPath":"res/manager/tabs/reportc.png",
+            "text":"报告"
+        }, {
+            "pagePath": "manager/options/menu/menu",
+           "iconPath": "res/manager/tabs/options.png",
+            "selectedIconPath":"res/manager/tabs/options.png",
+            "text":"店铺"
+        }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  }
+}

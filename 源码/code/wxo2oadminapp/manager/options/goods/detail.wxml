@@ -1,0 +1,171 @@
+<include src="../../common/managerbar.wxml"/>
+<view class="block" style="padding-top:98rpx;">
+	<view class="block-title border-item-1">
+		<text class=" push-l-10 push-r-10" > 商品详情 </text>
+		<text 
+			bindtap="addnew"
+			class="text-primary push-r-10 font-s14  pull-right" > 添加商品 </text>
+	</view>
+
+	<view class="block-content row rm-padding">
+		
+		<view class="form-group push-t-20">
+			<label for="name"><text>商品名称</text></label>
+			<input 
+				name="name" 
+				class="font-s15"
+				disabled="{{locked}}"
+				placeholder-class="text-muted" 
+				value="{{rs.name}}"
+				bindchange="textchange"
+				data-name="name"
+				type="text"/>
+		</view>
+
+		<view class="form-group">
+			<label for="corver"><text>封面图片</text></label>
+			<view  class="push-r-20 push-t-10">
+		        <image mode="widthFix" src="{{rs.corver}}" bindtap="corverchange"></image>
+		    </view>
+		</view>
+
+		<view class="form-group ">
+			<label for="summary"><text>商品简介</text></label>
+			<textarea 
+				name="summary" 
+				auto-height
+				class=" font-s15 "
+				disabled="{{locked}}"
+				placeholder-class="text-muted" 
+				value="{{rs.summary}}"
+				bindinput="textchange"
+				data-name="summary"
+				type="text"/>
+		</view>
+
+		<view class="form-group">
+			<label for="group"><text>商品类型</text></label>
+			<picker name="goods" 
+				class="push-t-10" 
+				bindchange="pickerchanage" value="{{type.curr}}" range="{{type.data}}">
+				<view class="picker font-s15">{{rs.type_name}}</view>
+			</picker>
+		</view>
+
+		<view class="form-group">
+			<label for="price">
+				<text>市场价 </text>
+				<text class="text-warn"> {{rs.price_show}} 元  </text>
+				<text class="font-s14 text-muted"> (单位:分) </text>
+
+			</label>
+			<input 
+				name="price" 
+				class="font-s15"
+				disabled="{{locked}}"
+				placeholder-class="text-muted" 
+				value="{{rs.price}}"
+				bindchange="pricechange"
+				data-name="price"
+				type="digit"/>
+		</view>
+
+		
+		<view class="form-group" wx:for="{{rs.price_list}}" wx:key="group">
+			<label for="price">
+				<text>{{item.name}}价 </text> 
+				<text class="text-warn">{{item.price_show}}元  </text> 
+				<text class="font-s14 text-muted"> (单位:分 折扣: {{item.discount}} ) </text>
+			</label>
+
+			<input 
+				name="price" 
+				class="font-s15"
+				disabled="{{locked}}"
+				placeholder-class="text-muted" 
+				value="{{item.price}}"
+				bindchange="pricechange"
+				data-name="{{index}}"
+				type="digit"/>
+		</view>
+
+		<view class="form-group" style="margin-bottom:120rpx;"></view>
+
+	</view>
+</view>
+
+
+<!-- 上架状态: 功能按钮 -->
+<template name="online">
+	<view style="width:40%">
+	    <button 
+			class="push-t-10 push-l-10"
+			type="default" size="mini" loading="{{locked}}" 
+	   	 	disabled="{{locked}}" 
+	    	bindtap="backlist"> 返回 </button>
+	</view>
+	<view class="text-right" style="width:60%">
+		
+		<button 
+			class="push-t-10 push-r-10"
+			type="warn" size="mini" loading="{{locked}}" 
+	   	 	disabled="{{locked}}" 
+	    	bindtap="rmit"> 删除 </button>
+
+
+		<button 
+			class="push-t-10 push-r-10"
+			type="warn" size="mini" loading="{{locked}}" 
+	   	 	disabled="{{locked}}" 
+	    	bindtap="offline"> 下架 </button>
+
+		<button 
+			class="push-t-10 push-r-10"
+			type="warn" size="mini" loading="{{locked}}" 
+	   	 	disabled="{{locked}}" 
+	    	bindtap="save"> 保存 </button>
+
+	</view>
+</template> <!-- 上架状态: 功能按钮 -->
+
+
+
+<!-- 下架状态: 功能按钮 -->
+<template name="offline">
+	<view style="width:40%">
+	    <button 
+			class="push-t-10 push-l-10"
+			type="default" size="mini" loading="{{locked}}" 
+	   	 	disabled="{{locked}}" 
+	    	bindtap="backlist"> 返回 </button>
+	</view>
+	<view class="text-right" style="width:60%">
+		
+		<button 
+			class="push-t-10 push-r-10"
+			type="warn" size="mini" loading="{{locked}}" 
+	   	 	disabled="{{locked}}" 
+	    	bindtap="rmit"> 删除 </button>
+
+
+		<button 
+			class="push-t-10 push-r-10"
+			type="warn" size="mini" loading="{{locked}}" 
+	   	 	disabled="{{locked}}" 
+	    	bindtap="online"> 上架 </button>
+
+		<button 
+			class="push-t-10 push-r-10"
+			type="warn" size="mini" loading="{{locked}}" 
+	   	 	disabled="{{locked}}" 
+	    	bindtap="save"> 保存 </button>
+
+	</view>
+</template> <!-- 上架状态: 功能按钮 -->
+
+
+<!-- 功能表单区  -->
+<view class="bottombar bg-grey view-row">
+	<template is="{{rs.status_show.tpl}}" data="{{online}}"/>
+</view> 
+<!-- 功能表单区  -->

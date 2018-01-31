@@ -1,0 +1,8 @@
+<view class="btn-title">
+  <image  mode="aspectFit" src="{{user.avatarUrl}}"  class="body-photo"></image>
+  <image  src="{{ewm}}" class="ewm-logo" mode="aspectFit" ></image>
+  <view class="body-title">{{user.nickName}}</view>
+  <view class="body-num">{{user.cid}}</view>
+  <view class="body-name">(白金会员)</view>
+</view>
+ <image style="width: 200px; height: 200px;" mode="aspectFill" src="{{qrurl}}" class="top"></image>

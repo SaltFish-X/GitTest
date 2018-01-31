@@ -1,0 +1,22 @@
+<include src="../../common/managerbar.wxml"/>
+
+<view class="table-list" style="padding-top:88rpx;">
+	<view class="row border-item-1 pad-10"  
+		bindtap="linkto"
+		data-id="{{item._id}}"
+		style="padding-top:26rpx;" wx:for="{{options}}" wx:key="_id" >
+		<view class="push-r-10">
+			<image mode="widthFix" style="width:48rpx;" src="/res/icons/vip.png"></image>
+		</view>
+		<view style="width:60%" class="push-r-10" >
+			<text class="font-s16" style="line-height:48rpx;">{{item.name}} </text>
+			<text class="font-s14 text-muted" style="line-height:48rpx;">( 折扣: {{item.discount}} ) </text>
+		</view>
+		<view style="width:30%" class="push-r-10 text-right">
+			<image mode="widthFix" style="width:48rpx;" src="/res/icons/right.png"></image>
+		</view>
+	
+	</view>
+
+	<view class="phrow"></view>
+</view>

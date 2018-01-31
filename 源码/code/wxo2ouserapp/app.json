@@ -1,0 +1,64 @@
+{
+  "pages":[
+        "pages/store/user/user/user",
+        "pages/store/products/list",
+        "pages/store/account/qrcode/qrcode",
+        "pages/store/products/detail",
+        "pages/store/logs/logs",
+        "pages/store/order/confirm/confirm",
+        "pages/store/account/index/index",
+        "pages/store/history/payout/payout",
+        "pages/store/account/profile/profile",
+        "pages/store/account/income/income",
+        "pages/store/booking/detail/detail",
+        "pages/store/booking/form/form",
+        "pages/store/history/payin/payin",
+        "pages/store/order/myorder/myorder",
+        "pages/store/order/detail/detail",
+        "pages/store/order/star/star"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar":{
+    "borderStyle":"white",
+    "backgroundColor":"#ffffff",
+    "selectedColor":"#81c7d1",
+    "color":"#a6a6a6",
+    "list": [
+        {
+            "pagePath": "manager/order/user/user",
+            "iconPath": "res/manager/tabs/user.png",
+            "selectedIconPath":"res/manager/tabs/userc.png",
+            "text":"下单"
+        }, {
+            "pagePath": "manager/order/list/list",
+            "iconPath": "res/manager/tabs/order.png",
+            "selectedIconPath":"res/manager/tabs/orderc.png",
+            "text":"订单"
+        }, {
+            "pagePath": "manager/booking/list/list",
+            "iconPath": "res/manager/tabs/booking.png",
+            "selectedIconPath":"res/manager/tabs/bookingc.png",
+            "text":"预约"
+        }, {
+            "pagePath": "manager/report/list/list",
+            "iconPath": "res/manager/tabs/report.png",
+            "selectedIconPath":"res/manager/tabs/reportc.png",
+            "text":"报告"
+        }, {
+            "pagePath": "manager/options/menu/menu",
+           "iconPath": "res/manager/tabs/options.png",
+            "selectedIconPath":"res/manager/tabs/options.png",
+            "text":"店铺"
+        }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  }
+}

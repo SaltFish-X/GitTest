@@ -1,0 +1,19 @@
+<include src="../../common/managerbar.wxml"/>
+
+<view class="table-list" style="padding-top:88rpx;">
+	<view class="row border-item-1 pad-10"   wx:for="{{links}}" wx:key="_id" 
+		bindtap="linkto"
+		data-link="{{item.url}}"
+		style="padding-top:26rpx;" >
+		<view  class="push-r-10" >
+			<image mode="widthFix" style="width:48rpx;" src="{{item.icon}}"></image>
+		</view>
+		<view style="width:60%" class="push-r-10">
+			<text class="font-s16" style="line-height:48rpx;">{{item.name}}</text>
+		</view>
+		<view style="width:30%" class="push-r-10 text-right">
+			<image mode="widthFix" style="width:48rpx;" src="/res/icons/right.png"></image>
+		</view>
+	</view>
+	<view class="phrow"></view>
+</view>

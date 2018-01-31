@@ -1,0 +1,13 @@
+@import "../../wxss/style.wxss"
+.left-but{
+	width:40%;
+	float: left;
+
+}
+.right-but{
+	width:40%;
+	float: right;
+	position: relative;
+	left: -20rpx;
+
+}

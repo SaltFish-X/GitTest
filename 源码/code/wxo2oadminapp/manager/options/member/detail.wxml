@@ -1,0 +1,88 @@
+<include src="../../common/managerbar.wxml"/>
+<view class="block" style="padding-top:98rpx;">
+	<view class="block-title border-item-1">
+		<text class=" push-l-10 push-r-10" > 会员详情 </text>
+		<text 
+			bindtap="addnew"
+			class="text-primary push-r-10 font-s14  pull-right" > 添加会员 </text>
+	</view>
+
+	<view class="block-content row rm-padding">
+		
+		<view class="form-group">
+			<label for="name"><text>会员名称</text></label>
+			<input 
+				name="name" 
+				class="font-s15"
+				disabled=""
+				placeholder-class="text-muted" 
+				value="{{member.name}}"
+				bindchange="textchange"
+				data-name="name"
+				type="text"/>
+		</view>
+
+		<view class="form-group">
+			<label for="discount"><text>价格折扣</text></label>
+			<input 
+				name="discount" 
+				class=" font-s15"
+				disabled=""
+				placeholder-class="text-muted" 
+				value="{{member.discount}}"
+				bindchange="textchange"
+				data-name="discount"
+				type="digit"/>
+		</view>
+	<view class="form-group">
+			<label for="group"><text>分组名称</text></label>
+			<input 
+				name="group" 
+				class=" font-s15"
+				disabled=""
+				placeholder-class="text-muted" 
+				value="{{member.group}}"
+				bindchange="textchange"
+				data-name="group"
+				type="text"/>
+		</view>
+		<view class="form-group" style="margin-bottom:100rpx;"></view>
+	</view>
+</view>
+
+
+<!-- 失败: 功能按钮 -->
+<template name="complete">
+	<view style="width:40%">
+	    <button 
+			class="push-t-10 push-l-10"
+			type="default" size="mini" loading="{{locked}}" 
+	   	 	disabled="{{locked}}" 
+	    	bindtap="backlist"> 返回 </button>
+	</view>
+	<view class="text-right" style="width:60%">
+
+		<button 
+			class="push-t-10 push-r-10"
+			type="warn" size="mini" loading="{{locked}}" 
+	   	 	disabled="{{locked}}" 
+	    	bindtap="rmit"> 删除 </button>
+
+		<button 
+			class="push-t-10 push-r-10"
+			type="warn" size="mini" loading="{{locked}}" 
+	   	 	disabled="{{locked}}" 
+	    	bindtap="save"> 保存 </button>
+
+	</view>
+</template> <!-- 失败: 功能按钮 -->
+
+
+<!-- //  WAIT_CFM  待确认   SUCCESS   成功   FAIL  失败   DONE   完成 -->
+
+
+<!-- 功能表单区  -->
+<view class="bottombar bg-grey view-row">
+	<template is="complete" data="{{online}}"/>
+</view> 
+<!-- 功能表单区  -->

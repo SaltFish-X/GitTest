@@ -1,0 +1,133 @@
+@import "../wxss/style.wxss"
+.btn-area{
+	width: 100%;
+	margin-bottom:140rpx;
+}
+.btn-area .body-view{
+	width: 90%;
+	margin: 0 auto;
+}
+.view-top{
+	margin-top: 20rpx;
+	border-bottom: 1px solid #ccc;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+.view-top .body-photo-left{
+	width:100%;
+	overflow: hidden;
+}
+.photo-left{
+	width: 90%;
+	word-break:break-all;
+	margin-bottom:20rpx; 
+	margin: 0 auto;
+	overflow: hidden;
+	margin-bottom: 20rpx;
+}
+.content{
+	width: 90%;
+	position: absolute;
+	top: 50%;
+	left: 5%;
+	overflow: hidden;
+}
+.view-title{
+	color:#ffffff;
+	width: 100%;
+}
+.view-content{
+	color:#ffffff;
+	overflow: hidden;
+	font-size: 30rpx;
+}
+.view-top .photo-left  .view-jg{
+	float: left;
+	margin-left: 10rpx;
+	margin-top: 30rpx;
+	color: #1AAD19;
+}
+.view-top .photo-left  .view-hy{
+	float: left;
+	margin-left: 10rpx;
+	margin-top: 35rpx;
+	font-size: 25rpx;
+}
+.view-top .photo-left  .view-ljgm{
+	float: right;
+	width: 150rpx;
+	height: 60rpx;
+	font-size: 30rpx;
+	margin-top: 20rpx;
+	text-align: center;
+}
+.view-zt{
+	margin-top: 10rpx;
+}
+.view-bottom{
+	width: 100%;
+	height: 120rpx;
+    position:fixed;
+    bottom:0rpx;
+    left:0;
+    background:#1AAD19;
+}
+.view-bottom .view-center{
+	width: 90%;
+	height: 118rpx;
+	border: 1px solid #1AAD19;
+	margin: 0 auto;
+}
+.shopicon{
+	width: 15%;
+	height: 80rpx;
+	float: left;
+	margin-top: 20rpx;
+}
+.js-center{
+	margin-left: 10rpx;
+	margin-top: 32rpx;
+	color: #ffffff;
+}
+.js-right{
+	width: 150rpx;
+	height: 70rpx;
+	float: right;
+	margin-top: -50rpx;
+	text-align: center;
+	border-radius: 20rpx;
+	background: #da4f49;
+	color: #ffffff;
+}
+.zt{
+	margin-top: 10rpx;
+}
+.bottombar {
+	bottom: 0px;
+	border: 1px solid #81c7d1;
+	background: #81c7d1;
+	color:#ffffff;
+	position: fixed;
+	line-height: 100rpx;
+	height:100rpx;
+	width: 100%;
+	z-index: 1000;
+}
+
+.bottombar text {
+	color: #ffffff;
+	font-weight: 400;
+	font-size: 30rpx;
+}
+.bottombar image {
+	width: 60rpx;
+	height: 60rpx;
+	margin:20rpx;
+	margin-bottom:0;
+}
+.text-mimi{
+	font-size: 25rpx;
+	color: #81c7d1;
+	margin-left: 10rpx;
+}

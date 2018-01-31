@@ -1,0 +1,30 @@
+@import "../wxss/style.wxss"
+
+.bottombar {
+	bottom: 0px;
+	border: 1px solid #81c7d1;
+	background: #81c7d1;
+	color:#ffffff;
+	position: fixed;
+	line-height: 100rpx;
+	height:100rpx;
+	width: 100%;
+	z-index: 1000;
+}
+
+.bottombar text {
+	color: #ffffff;
+	font-weight: 400;
+	font-size: 30rpx;
+}
+.bottombar image {
+	width: 60rpx;
+	height: 60rpx;
+	margin:20rpx;
+	margin-bottom:0;
+}
+.text-mimi{
+	font-size: 25rpx;
+	color: #81c7d1;
+	margin-left: 10rpx;
+}

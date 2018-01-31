@@ -1,0 +1,50 @@
+<!-- 商品列表 -->
+<view class="block ">
+	<view class="block-title border-item-1">
+		<text class=" push-l-10 push-r-10" > 商品清单 </text>
+	</view>
+	<view class="block-content row rm-padding">
+		<view class="table-list push-l-20" >
+			<view class="row border-item-1 pad-10"  wx:for="{{goods}}" wx:key="id" >
+				<!-- 商品名称 -->
+				<view class="pull-left  push-r-10" style="width:40%" >
+					<image mode="widthFix" src="{{item.corver}}"></image>
+				</view>
+				<!-- 商品信息 -->
+				<view class="pull-right push-r-10 column" style="width:60%;" >
+					<view> {{item.name}} </view>
+					<view class="push-t-5 text-muted font-s14 overhidden"> {{item.summary}} </view>
+					<view class="push-t-10 row">
+						<text class="text-primary"> {{item.show_price}} 元 </text>
+						<text class="text-primary push-l-10"> X </text>
+						<text class="text-primary push-l-10"> {{item.amount}} </text>
+					</view>
+				</view>
+			</view>
+			<!-- 商品合计单价 -->
+			<view class="row  text-right pad-10"  >
+				<view class=" text-primary" style="width:100%;"> 合计: {{order.show_price}} 元</view>
+			</view>
+		</view>
+	</view>
+	<view class="block-title border-item-1">
+		<text class=" push-l-10 push-r-10" >请对本次服务评分</text>
+	</view>
+	<!-- END 商品列表 -->
+	<view class="block-content row rm-padding">
+		<view  wx:for="{{start}}" wx:for-index="idx" wx:for-item="url">
+			<image  mode="aspectFill" src="{{url.link}}" class="slt" data-num="{{url.num}}" bindtap="seturl"></image>
+	  	</view>
+	</view>
+	<form bindsubmit="formSubmit">
+		<view class="form-group-cen {{show}}">
+			<text class="push-l push-l-10">打赏金额:</text>
+			<input type="digit" placeholder="请输入打赏金额" class="input-center push-l" name="total"/>
+			<text class=" push-l">元</text>
+		</view>
+		<view class="form-group-cen">
+			<button type="primary" size="{{size}}"  formType="submit" class="left-but">确认</button>
+			<button type="warn" size="{{size}}"     bindtap="unpayout" class="right-but">取消</button>
+		</view>
+	</form>
+</view>

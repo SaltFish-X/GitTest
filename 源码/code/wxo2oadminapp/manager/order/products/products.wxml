@@ -1,0 +1,46 @@
+<include src="../../common/managerbar.wxml"/>
+<include src="../../common/userbar.wxml"/>
+
+<view class="table-list" style="padding-top:188rpx;">
+	<view class="row border-item-1 pad-10"  style="padding-top:26rpx;" wx:for="{{goods}}" wx:key="_id" >
+		<view style="width:200rpx;" class="push-r-10">
+			<image mode="widthFix" src="{{item.corver}}"></image>
+		</view>
+		<view style="width:50%" class="push-r-10"><text class="font-s15">{{item.name}}</text></view>
+		<view style="width:30%" class="push-r-10 push-t-10"><text class="text-primary">{{item.show_price}}</text></view>
+
+		<view style="width:30%;min-width:160rpx;">
+			<button type="primary" size="mini" loading="{{loading}}" plain="true"
+        		disabled="{{disabled}}" 
+        		data-id="{{item._id}}"
+        		data-price="{{item.sale_price}}"
+        		data-amount="1"
+        		bindtap="addtocart"> 添加 </button>
+		</view>
+	</view>
+
+	<view class="phrow"></view>
+</view>
+
+<view class="bottombar view-row">
+	<view style="width:88rpx;">
+		<image mode="widthFix" src="/res/icons/shop.png"></image>
+	</view>
+	<view  style="width:40%">
+		<text style="padding-left:20rpx;"> {{cart.total}} 件商品 {{cart.show_price}} 元 </text>
+	</view>
+
+	<view class="text-right" style="width:50%">
+		<button 
+			class="push-t-10 push-r-10"
+			type="warn" size="mini" loading="{{loading}}" 
+       	 	disabled="{{disabled}}" 
+        	bindtap="confirm"> 生成订单 </button>
+
+     	<button 
+			class="push-t-10 push-r-10"
+			type="default" size="mini" loading="{{loading}}" 
+       	 	disabled="{{disabled}}" 
+        	bindtap="cleanup"> 清空 </button>
+    </view>
+</view>

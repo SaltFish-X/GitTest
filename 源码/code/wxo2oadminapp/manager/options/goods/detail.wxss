@@ -1,0 +1,4 @@
+@import "../../wxss/style.wxss"
+.block .form-group {
+	margin-top:40rpx;
+}

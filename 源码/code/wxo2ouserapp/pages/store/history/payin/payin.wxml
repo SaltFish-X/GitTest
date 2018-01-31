@@ -1,0 +1,17 @@
+<view class="table-list">
+	<view  wx:for="{{data}}" wx:for-index="idx" wx:for-item="itdata">
+	<view class="row border-item-1 pad-10" style="padding-top:26rpx;"  >
+		<view style="width:30%" class="push-r-10">
+			<text class="font-s16" style="line-height:48rpx;">{{itdata.created_at}}</text>
+		</view>
+		
+		<view style="width:20%" class="push-r-10">
+			<text class="font-s16" style="line-height:48rpx;">+{{itdata.amount+itdata.amount_free/100}}</text>
+		</view>
+		<view style="width:40%" class="push-r-10">
+			<text class="font-s16" style="line-height:48rpx;">{{itdata.sn}}</text>
+		</view>
+	</view>
+	</view>
+	<view class="phrow"></view>
+</view>

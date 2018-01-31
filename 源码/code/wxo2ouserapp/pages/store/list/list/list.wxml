@@ -1,0 +1,47 @@
+<scroll-view  scroll-y="true"  bindscrolltolower="upper" style="height:{{height}}px;">
+  <view class="table-list">
+    <view class="row border-item-1 pad-10"  style="padding-top:26rpx;" wx:for="{{data}}" wx:key="_id" >
+      <view style="width:200rpx;" class="push-r-10" 
+      bindtap="page"
+      data-id="{{item._id}}"
+      >
+        <image mode="widthFix" src="{{item.corver}}"></image>
+      </view>
+      <view style="width:50%" class="push-r-10" 
+      bindtap="page" data-id="{{item._id}}">
+        <text class="font-s15">{{item.name}}</text>
+      </view>
+      <view style="width:30%" class="push-r-10 push-t-10">
+        <text class="text-primary">{{item.show_price}}</text>
+      </view>
+      <view style="width:30%;min-width:160rpx;">
+        <button type="primary" size="mini"  bindtap="addtocard"
+                    data-id="{{item._id}}"
+                    data-price="{{item.price}}"
+                    data-amount="1"
+                    bindtap="addtocart">购买</button>
+      </view>
+    </view>
+    <view class="phrow"></view>
+  </view>
+  <view class="bottombar view-row">
+    <view style="width:88rpx;">
+      <image mode="widthFix" src="/res/icons/shop.png"></image>
+    </view>
+    <view  style="width:40%">
+      <text style="padding-left:20rpx;"> {{cart.total}} 件商品 {{cart.show_price}} 元 </text>
+    </view>
+    <view class="text-right" style="width:50%">
+      <button 
+        class="push-t-10 push-r-10"
+        type="warn" size="mini" loading="{{loading}}" 
+            disabled="{{disabled}}" 
+            data-link="{{order}}" bindtap="linkto"> 生成订单 </button>
+        <button 
+        class="push-t-10 push-r-10"
+        type="default" size="mini" loading="{{loading}}" 
+            disabled="{{disabled}}" 
+            bindtap="cleanup"> 清空 </button>
+      </view>
+  </view>
+</scroll-view>

@@ -1,0 +1,36 @@
+@import "../../wxss/style.wxss"
+.slt{
+	width: 80rpx;
+	height: 80rpx;
+	float: left;
+}
+.input-center{
+	float: left;
+}
+.push-l{
+	float: left;
+}
+.input-center{
+	margin-top:-8rpx;
+}
+.center-but{
+	width: 40%;
+}
+.form-group-cen{
+	overflow: hidden;
+	margin: 0 auto; 
+}
+.left-but{
+	float:left;
+	margin-top: 20rpx;
+	margin-left: 20rpx;
+}
+.right-but{
+	float: right;
+	margin-top: 20rpx;
+	position: relative;
+	left: -20rpx;
+}
+.hide{
+	display: none;
+}

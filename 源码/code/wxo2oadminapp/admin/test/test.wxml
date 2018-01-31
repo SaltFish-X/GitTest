@@ -1,0 +1,12 @@
+<view class="flex-row" style="" wx:key="" wx:for="{{test}}">
+  <button 
+    type="warn" 
+    size="mini"
+    loading="{{loading}}" 
+    disabled="{{disabled}}" 
+    bindtap="try{{item}}" 
+    data-name="{{item}}"
+    class="flat-btn"
+    hover-class="other-button-hover"> 测试 {{item}} </button>
+
+</view>

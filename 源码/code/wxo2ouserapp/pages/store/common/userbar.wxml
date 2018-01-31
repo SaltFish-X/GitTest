@@ -1,0 +1,21 @@
+<view class="topbar view-row">
+	<view style="width:60rpx;color:#ffffff;">
+		<!-- <image class="avatar"  mode="widthFix" src="{{common.user.avatarUrl}}"></image> -->
+		<image 
+			wx:if="{{common.user.online}}"  
+			mode="widthFix" src="/res/icons/{{common.user.online}}.png"></image>
+	</view>
+	<view  style="width:70%">
+		<text class="font-s16">{{common.user.name}}{{common.user.show_type}}</text>
+		<text class="font-s16 {{common.user.message.style}}">{{common.user.message.text}}</text>
+	</view>
+	<view class="pull-right text-right push-r-10" style="width:30%">
+		
+		<image style="width:48rpx;" 
+			class="push-t-10 push-r-10"
+			data-mobile="{{common.user.mobile}}"
+			bindtap="onMangerbarTap" 
+			mode="widthFix" src="/res/manager/tabs/calluserc.png" bindtap="onUserbarTap" > </image>
+
+	</view>
+</view>

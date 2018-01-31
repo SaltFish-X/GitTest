@@ -1,0 +1,21 @@
+<scroll-view scroll-y="true" bindscrolltolower="next" style="height:{{system.windowHeight}}px;">
+	<view class="table-list">
+		<view class="row border-item-1 pad-10"    style="padding-top:26rpx;" wx:for="{{goods}}" wx:key="_id" >
+			<view style="width:200rpx;"  class="push-r-10"> <image  bindtap="detail"   data-id="{{item._id}}"  mode="widthFix" src="{{item.corver}}"></image> </view>
+			<view style="width:50%" class="push-r-10"><text bindtap="detail"  data-id="{{item._id}}"  class="font-s15">{{item.name}}</text></view>
+			<view style="width:30%" class="push-r-10 push-t-10"> <text  bindtap="detail"  data-id="{{item._id}}" class="text-primary">{{item.show_price}}</text> </view>
+			<view style="width:30%;min-width:160rpx;">
+				<button type="primary" size="mini"  bindtap="addtocard"
+			    	data-id="{{item._id}}"
+			    	data-price="{{item.sale_price}}"
+			    	data-amount="1"
+			    	bindtap="addtocart">购买</button>
+			</view>
+		</view>
+		 
+		<view class="row border-item-1 pad-10 {{goodsLoading}}"  style="padding-top:26rpx;">读取中...</view>
+		<view class="phrow"></view>
+	</view>
+
+	<include src="../common/cart.wxml" />
+</scroll-view>
