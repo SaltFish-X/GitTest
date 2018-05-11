@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>瀑布流js</title>
+</head>
+<body>
+  <div class="button">
+    <button id="multi-columns" onclick="addClass(this.id)">Multi-columns</button>
+    <button id="flex" onclick="addClass(this.id)">Flex</button>
+    <button id="flex-new" onclick="flexNew(this.id)">Flex-New</button>
+    <button id="grid" onclick="addClass(this.id)">Grid</button>
+  </div>
+  <div class="tips">用Css写的瀑布流均为纵向排列，使用时有局限性</div>
+  <div class="container">
+  </div>
+</body>
+<script>
+  var container = document.getElementsByClassName('container')[0]
+  for(var i = 1; i < 30; i++) {
+    var ele = `<div class="item"><img src="./img/${i}.jpg"></div>`
+    container.insertAdjacentHTML('beforeend', ele);
+    // container.insertBefore(ele, null)
+  }
+  function addClass( name ) {
+    container.className = 'container'
+    container.className += ` ${name}-container`
+    var item = document.querySelectorAll('.item')
+    item.forEach(e => {
+      e.className = 'item'
+      e.className += ` ${name}-item`
+    })
+  }
+  function flexNew(name) {
+    container.innerHTML = ''
+    for(var i = 1; i < 30; i=i+3) {
+      var ele = `<div class="column"><div class="item"><img src="./img/${i}.jpg"></div><div class="item"><img src="./img/${i+1}.jpg"></div><div class="item"><img src="./img/${i+2}.jpg"></div></div>`
+      container.insertAdjacentHTML('beforeend', ele);
+    }
+    container.className = 'container'
+    container.className += ` ${name}-container`
+  }
+</script>
+<link rel="stylesheet" href="./index-css.css">
+</html>
