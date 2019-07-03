@@ -1,22 +1,6 @@
-# vuw-vw
-
-vue-cli3 里使用 vw、stylus
-
-### vue-cli3 里使用 vw
-
-安装依赖包
-
-```
-npm i -S postcss-aspect-ratio-mini postcss-px-to-viewport postcss-write-svg postcss-cssnext postcss-viewport-units cssnano
-npm i -S postcss-import postcss-url
-npm i -S cssnano-preset-advanced
-```
-
-新建 `postcss.config.js`
-
-```javaScript
 module.exports = {
   plugins: {
+    // autoprefixer: {}
     "postcss-import": {},
     "postcss-url": {},
     "postcss-aspect-ratio-mini": {},
@@ -41,26 +25,3 @@ module.exports = {
     }
   }
 };
-```
-
-### vue-cli3 里使用 stylus
-
-安装 npm i -S stylus stylus-loader
-
-修改 `vue.config.js`
-
-```javaScript
-const path = require('path')
-moudule.exports = {
-  css:{
-    loaderOptions:{
-      sass:{
-        data: `@import "@/css/"`
-      }
-      stylus:{
-        import: path.reslove(__dirname, './src/css')
-      }
-    }
-  }
-}
-```
