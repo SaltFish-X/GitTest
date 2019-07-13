@@ -24,6 +24,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  background-color: #fff;
 }
 
 img {
@@ -34,5 +35,15 @@ body {
 }
 p {
   font-size: 24px;
+}
+
+@media screen and (min-width: 750px) {
+  #app {
+    width: 750px;
+    margin: auto;
+  }
+  body {
+    background: #000;
+  }
 }
 </style>
