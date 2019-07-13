@@ -10,14 +10,14 @@
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import HelloWorld from './components/HelloWorld.vue'
 // import LazyLoading from "./components/LazyLoading.vue";
 // import LazyLoading1 from "./components/LazyLoading1.vue";
 // const LoadingComponent = () => import("./components/LoadingComponent");
-const LazyLoading = () => import("./components/LazyLoading");
-const LazyLoading1 = () => ({ component: import("./components/LazyLoading1") });
+const LazyLoading = () => import('./components/LazyLoading')
+const LazyLoading1 = () => ({ component: import('./components/LazyLoading1') })
 export default {
-  name: "app",
+  name: 'app',
   components: {
     HelloWorld,
     LazyLoading,
@@ -27,20 +27,20 @@ export default {
     return {
       index: [],
       show: false
-    };
+    }
   },
   mounted() {
     window.setTimeout(() => {
-      this.show = true;
-    }, 3000);
+      this.show = true
+    }, 3000)
     // this.index = Array.from(new Array(1000).keys());
   }
-};
+}
 </script>
 
 <style lang="scss">
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
