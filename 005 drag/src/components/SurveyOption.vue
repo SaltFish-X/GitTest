@@ -1,5 +1,5 @@
 <template lang="pug">
-
+.survey-option
 </template>
 
 <script>

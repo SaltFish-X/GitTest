@@ -1,5 +1,5 @@
 <template lang="pug">
-
+.survey-list
 </template>
 
 <script>
