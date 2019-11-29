@@ -1,5 +1,5 @@
 <template lang="pug">
-.Survey
+.survey
   SurveyType
   SurveyList
   SurveyOption
@@ -13,9 +13,12 @@ export default {
   data() {
     return {};
   },
-  computed: { SurveyList, SurveyOption, SurveyType }
+  components: { SurveyList, SurveyOption, SurveyType }
 };
 </script>
 
 <style lang="scss" scoped>
+.survey {
+  display: flex;
+}
 </style>
